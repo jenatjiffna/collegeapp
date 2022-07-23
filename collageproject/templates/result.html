@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <div class="row my_row_class">
+        <div class="mx_auto">
+            <h2>
+                your slot is booked<br>
+                <a href="{% url 'index' %}"><h4>Home</h4></a>
+            </h2>
+        </div>
+    </div>
+</div>
+{% endblock %}

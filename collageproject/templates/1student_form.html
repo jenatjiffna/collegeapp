@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+          <h2>Student Form</h2>
+          <form method="post" id="studentForm" data-branches-url="{% url 'ajax_load_branches' %}" data-course-url="{% url 'ajax_load_fees' %}" novalidate>
+            {% csrf_token %}
+            <table>
+              {{ form.as_table }}
+            </table>
+            <button type="submit">Save</button>
+          </form>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+            $("#id_center").change(function () {
+              var url = $("#studentForm").attr("data-branches-url");
+              var centerId = $(this).val();
+
+              $.ajax({
+                url: url,
+                data: {
+                  'center': centerId
+                },
+                success: function (data) {
+                  $("#id_subcenter").html(data);
+                }
+              });
+
+            });
+          </script>
+
+        <script>
+            $("#id_course1").change(function () {
+              var url = $("#studentForm").attr("data-course-url");
+              var courseId = $(this).val();
+
+              $.ajax({
+                url: url,
+                data: {
+                  'course1': courseId
+                },
+                success: function (data) {
+                  $("#id_total_fees").html(data);
+                }
+              });
+
+            });
+          </script>
+
+    </div>
+</div>
+
+{% endblock %}

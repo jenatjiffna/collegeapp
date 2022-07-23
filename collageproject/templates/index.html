@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block metadescription %}
+        welcome to Sathyam College of Engineering and Technology
+{% endblock %}
+
+{% block title %}
+        See our Academics @ SCET
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <div>
+        <div class="row my_row_class">
+            <div class="mx_auto">
+                <p><a class="btn btn-secondary" href="{% url 'login' %}">contact us    </a></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+         <img class="my_image my_image_padding" src="{% static 'img/img_3.png' %}"  alt="our course">
+    </div><br>
+    <div>
+        <div>
+            <h1 class="text-center my_title"><b>Apply for Admission</b></h1>
+            <h5 style="color:green;padding:50px"><b>2022 Online admission are now open</b></h5>
+
+            <p class="text-justify"><b>We extremely value and appreciate your interest in seeking admission to the Engineering Degree programme offered by this College.
+            Engineering studies is about acquiring technical skills and knowledge to solve problems of people and society.</b> </p>
+        </div>
+    </div>
+    <div>
+    <img class="my_image my_image_padding" src="{% static 'img/img_1.png' %}"  alt="our products">
+    </div>
+    <div>
+        <h1 class="text-center my_title"><b>About Our College</b></h1>
+        <p><b>We are one of the Next Generation Engineering Institutions in Kerala which has been producing quality technocrats in our country for more than a decade</b></p>
+        <p><b>Our college is situated in Thrissur district, the cultural capital of Kerala, with cochin International Airport just 50 kms away.
+            SCET is blessed with a wonderful campus of 33 acres surrounded by lush and serene natural beauty that inspires tomorrows engineers to succeed personally and professionally in this competitive world.
+            Acclaimed as one of the best equipped institutions , Royal college of engineering & Technology has, in a relative short span, marked its presence among the community.</b></p>
+        <p><b>The institution has been Accredited by NAAC, valid for a period of 5 years from 10 – 10 – 2021.</b></p>
+    </div>
+</div>
+
+
+{% endblock %}
